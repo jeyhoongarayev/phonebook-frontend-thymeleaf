@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<form action="#" th:action="@{/add-user}" th:object="${user}" method="post">
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    <label for="phone">Phone</label>
+    <input type="text" th:field="*{phone}" id="phone" placeholder="phone">
+    <span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
+    <input type="submit" value="Add User">
+</form>
+</body>
+</html>
